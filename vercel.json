@@ -1,0 +1,41 @@
+{
+  "version": 2,
+  "name": "ai-news-hub",
+  "public": true,
+  "buildCommand": null,
+  "outputDirectory": ".",
+  "framework": null,
+  "env": {
+    "VITE_APP_TITLE": "Daily AI Hub",
+    "VITE_APP_LOGO": "https://files.manuscdn.com/user_upload_by_module/web_dev_logo/310519663216063405/bVJNzpuLdDhujigo.png",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "c57d7b76-c70c-4acf-ab17-d63fe333a450"
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html",
+      "status": 200
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/index.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ]
+}
