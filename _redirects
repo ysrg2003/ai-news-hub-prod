@@ -1,0 +1,7 @@
+# Cloudflare Pages redirects
+# API routes
+/api/trpc/* /api/trpc/:splat 200
+/api/* /api/:splat 200
+
+# SPA fallback
+/* /index.html 200
